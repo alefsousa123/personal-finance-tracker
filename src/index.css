@@ -1,0 +1,57 @@
+
+/* ===== GLOBAL STYLES ===== */
+
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  color: #f8fafc;
+  background-color: #0b1220;
+}
+
+/* ===== CSS RESET ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+/* ===== FORM ELEMENTS ===== */
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ===== TEXT SELECTION ===== */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}

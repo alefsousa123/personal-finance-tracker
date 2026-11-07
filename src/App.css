@@ -1,0 +1,605 @@
+/* ===== 1. APP LAYOUT ===== */
+.app-shell {
+  width: min(1050px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+.app-shell > header {
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  background: #111c30;
+  border: 1px solid #26354b;
+  border-radius: 16px;
+}
+
+.app-shell > header h1 {
+  color: #f8fafc;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.app-shell > header p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* ===== 2. DASHBOARD ===== */
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.page-heading,
+.summary-panel,
+.charts-panel {
+  grid-column: 1 / -1;
+}
+
+.page-heading h2 {
+  color: #f8fafc;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.page-heading p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* ===== 3. SUMMARY CARDS ===== */
+.summary-panel > section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.summary-panel > section > div {
+  min-width: 0;
+  padding: 16px 20px;
+  background: #172236;
+  border: 1px solid #2b3a50;
+  border-radius: 14px;
+}
+
+.summary-panel h3 {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.summary-panel p {
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+
+.summary-panel > section > div:nth-child(2) p {
+  color: #4ade80;
+}
+
+.summary-panel > section > div:nth-child(3) p {
+  color: #f87171;
+}
+
+/* ===== 4. FORM AND HISTORY PANELS ===== */
+.form-panel,
+.history-panel {
+  min-width: 0;
+  padding: 20px;
+  background: #172236;
+  border: 1px solid #2b3a50;
+  border-radius: 16px;
+}
+
+.form-panel h2,
+.history-panel h2 {
+  color: #f8fafc;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.form-panel form,
+.history-panel section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-panel label,
+.history-panel label {
+  display: block;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-panel input,
+.form-panel select,
+.history-panel input,
+.history-panel select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 9px 12px;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  color-scheme: dark;
+}
+
+.form-panel input:focus,
+.form-panel select:focus,
+.history-panel input:focus,
+.history-panel select:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 1px;
+}
+
+.form-panel button {
+  padding: 10px 14px;
+  margin-top: 6px;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-panel button:hover {
+  background: #047857;
+}
+
+.form-panel button[type="button"] {
+  background: #334155;
+}
+
+.form-panel button[type="button"]:hover {
+  background: #475569;
+}
+
+/* ===== 5. COMPACT TRANSACTION FORM ===== */
+.form-panel .transaction-form {
+  gap: 14px;
+}
+
+.form-panel .transaction-form h2 {
+  margin-bottom: 6px;
+}
+
+.transaction-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.transaction-form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.transaction-form .form-field label {
+  font-size: 13px;
+}
+
+.transaction-form .form-field input,
+.transaction-form .form-field select {
+  width: 100%;
+  height: 38px;
+  min-height: 38px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.transaction-form .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.transaction-form .form-actions button {
+  min-height: 38px;
+  margin-top: 0;
+  padding: 8px 16px;
+}
+
+/* ===== 6. HISTORY FILTERS ===== */
+.history-panel .transaction-history {
+  gap: 14px;
+}
+
+.history-panel .transaction-history h2 {
+  margin-bottom: 6px;
+}
+
+.history-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.history-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.history-panel .history-field label {
+  font-size: 13px;
+}
+
+.history-panel .history-field input,
+.history-panel .history-field select {
+  width: 100%;
+  height: 38px;
+  min-height: 38px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.history-results {
+  padding-top: 10px;
+  border-top: 1px solid #334155;
+}
+
+.history-results p {
+  color: #94a3b8;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* ===== 7. TRANSACTION ITEMS ===== */
+.history-panel ul {
+  list-style: none;
+  margin-top: 12px;
+  padding: 0;
+}
+
+.history-panel .transaction-items {
+  margin: 0;
+  padding: 0;
+}
+
+.history-panel li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #334155;
+}
+
+.history-panel .transaction-item {
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.history-panel li span {
+  color: #cbd5e1;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.history-panel li span:first-child {
+  color: #f8fafc;
+  font-weight: 600;
+  font-size: 15px;
+  flex-basis: 100%;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.transaction-info strong {
+  color: #f8fafc;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.history-panel .transaction-info span {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.history-panel .transaction-amount {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.history-panel .transaction-amount.income {
+  color: #4ade80;
+}
+
+.history-panel .transaction-amount.expense {
+  color: #f87171;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.history-panel li button {
+  padding: 6px 10px;
+  border: 1px solid #475569;
+  border-radius: 7px;
+  background: #26354b;
+  color: #f8fafc;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.history-panel li button:hover {
+  background: #334155;
+}
+
+.history-panel li button:last-child {
+  color: #fca5a5;
+  border-color: #7f3030;
+}
+
+.history-panel .transaction-actions button {
+  padding: 5px 9px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* ===== 8. FINANCIAL CHARTS ===== */
+.charts-panel {
+  width: 100%;
+  min-width: 0;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.charts-grid > section {
+  min-width: 0;
+  height: 100%;
+}
+
+.expense-chart,
+.monthly-chart {
+  background: #172236;
+  border: 1px solid #2b3a50;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.monthly-chart {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chart-heading h2,
+.monthly-chart-heading h2 {
+  color: #f8fafc;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.chart-heading p,
+.monthly-chart-heading p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 0;
+}
+
+.chart-heading strong {
+  color: #f87171;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.chart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.charts-grid .chart-layout {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.chart-visual {
+  width: 100%;
+  height: 250px;
+  min-width: 0;
+}
+
+.charts-grid .chart-visual {
+  height: 220px;
+}
+
+.monthly-chart-visual {
+  width: 100%;
+  height: 280px;
+  min-width: 0;
+  margin-top: 20px;
+}
+
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.legend-color {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.legend-item strong {
+  margin-left: auto;
+  color: #f8fafc;
+  font-size: 13px;
+}
+
+.chart-empty {
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ===== 9. RESPONSIVE LAYOUT ===== */
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading,
+  .summary-panel,
+  .charts-panel {
+    grid-column: auto;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    width: calc(100% - 20px);
+    padding-top: 12px;
+  }
+
+  .app-shell > header {
+    padding: 18px 24px;
+    margin-bottom: 20px;
+  }
+
+  .app-shell > header h1 {
+    font-size: 23px;
+  }
+
+  .dashboard {
+    gap: 16px;
+  }
+
+  .summary-panel > section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .summary-panel > section > div {
+    padding: 16px;
+  }
+
+  .summary-panel p {
+    font-size: 22px;
+  }
+
+  .form-panel,
+  .history-panel,
+  .expense-chart,
+  .monthly-chart {
+    padding: 16px;
+  }
+
+  .chart-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chart-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .chart-visual {
+    height: 220px;
+  }
+
+  .monthly-chart-visual {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transaction-form .form-row,
+  .history-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-form .form-actions button {
+    width: 100%;
+  }
+
+  .history-panel .transaction-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .transaction-details {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
